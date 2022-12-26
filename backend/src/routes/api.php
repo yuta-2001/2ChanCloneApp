@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ThreadController;
+use App\Http\Controllers\ResponseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/threds', [ThreadController::class, 'index']);
 Route::post('/threds', [ThreadController::class, 'post']);
 Route::get('/threds/{id}', [ThreadController::class, 'show']);
+
+Route::post('threds/{thredId}/responses', [ResponseController::class, 'store']);
