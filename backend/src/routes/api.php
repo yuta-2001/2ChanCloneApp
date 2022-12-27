@@ -20,8 +20,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/threds', [ThreadController::class, 'index']);
-Route::post('/threds', [ThreadController::class, 'post']);
-Route::get('/threds/{id}', [ThreadController::class, 'show']);
+Route::get('/threads', [ThreadController::class, 'index']);
+Route::post('/threads', [ThreadController::class, 'post']);
+Route::get('/threads/{id}', [ThreadController::class, 'show']);
 
-Route::post('threds/{thredId}/responses', [ResponseController::class, 'store']);
+Route::post('threads/{threadId}/responses', [ResponseController::class, 'store']);
